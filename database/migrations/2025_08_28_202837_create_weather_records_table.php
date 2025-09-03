@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('weather_records', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
-            $table->dateTime('timestamp');
-            $table->float('temperature');
-            $table->timestamps();
-});
+           $table->id();
+        $table->foreignId('city_id')->constrained()->onDelete('cascade');
+        $table->dateTime('timestamp');
+        $table->float('temperature');
+        $table->timestamps();
+        });
     }
 
     /**
